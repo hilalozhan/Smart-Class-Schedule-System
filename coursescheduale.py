@@ -5,7 +5,7 @@ from datetime import datetime
 
 
 # Load the Excel file
-file_path = 'Ders Programı Yönetim Sistemi_Örnek Veri Seti_28062024.xlsx'
+file_path = 'path to your file'
 derslikler_df = pd.read_excel(file_path, sheet_name='Derslikler')
 guz_yariyili_df = pd.read_excel(file_path, sheet_name='Güzyarıyılı')
 bahar_yariyili_df = pd.read_excel(file_path, sheet_name='Baharyarıyılı ')
@@ -23,68 +23,16 @@ students = ogrenciler_df[['Öğrenci', 'Sınıf']].to_dict(orient='records')
 
 # Define elective courses
 alansecmeli_courses = [
-    {'Ders': 'MÖ470 - Batı Müziği Tür ve Biçim Bilgisi [C2]', 'AKTS': 4},
-    {'Ders': 'MÖ471 - Drama ve Müzikli Oyunlar [C2]', 'AKTS': 4},
-    {'Ders': 'MÖ472 - Eğitim Müziği Besteleme Teknikleri [C2]', 'AKTS': 4},
-    {'Ders': 'MÖ473 - Müzik Toplulukları Yönetimi [C2]', 'AKTS': 4},
-    {'Ders': 'MÖ474 - Müziksel Organizasyon ve İletişim [C2]', 'AKTS': 4},
-    {'Ders': 'MÖ475 - Okul Öncesi Müzik Eğitimi [C2]', 'AKTS': 4},
-    {'Ders': 'MÖ476 - Popüler Müzik ve Uygulamaları [C2]', 'AKTS': 4},
-    {'Ders': 'MÖ477 - Sınıf İçi Öğrenmelerin Değerlendirilmesi [C2]', 'AKTS': 4},
-    {'Ders': 'MÖ478 - Türk Halk Müziği Tür ve Biçim Bilgisi [C2]', 'AKTS': 4},
-    {'Ders': 'MÖ479 - Türk Müziği Çok Seslendirme [C2]', 'AKTS': 4},
-    {'Ders': 'MÖ480 - Türk Sanat Müziği Tür ve Biçim Bilgisi [C2]', 'AKTS': 4}
+....
 ]
 
 mesleksecmeli_courses = [
-    {'Ders': 'EBB278 - Açık ve Uzaktan Öğrenme [C2]', 'AKTS': 4},
-    {'Ders': 'EBB279 - Çocuk Psikolojisi [C2]', 'AKTS': 4},
-    {'Ders': 'EBB280 - Dikkat Eksikliği ve Hiperaktivite Bozukluğu [C2]', 'AKTS': 4},
-    {'Ders': 'EBB281 - Eğitim Antropolojisi [C2]', 'AKTS': 4},
-    {'Ders': 'EBB282 - Eğitim Hukuku [C2]', 'AKTS': 4},
-    {'Ders': 'EBB284 - Eğitimde Drama [C2]', 'AKTS': 4},
-    {'Ders': 'EBB285 - Eğitimde Program Dışı Etkinlikler [C2]', 'AKTS': 4},
-    {'Ders': 'EBB286 - Eğitimde Program Geliştirme [C2]', 'AKTS': 4},
-    {'Ders': 'EBB287 - Eğitimde Proje Hazırlama [C2]', 'AKTS': 4},
-    {'Ders': 'EBB288 - Eleştirel ve Analitik Düşünme [C2]', 'AKTS': 4},
-    {'Ders': 'EBB289 - Hastanede Yatan Çocukların Eğitimi [C2]', 'AKTS': 4},
-    {'Ders': 'EBB290 - Kapsayıcı Eğitim [C2]', 'AKTS': 4},
-    {'Ders': 'EBB291 - Karakter ve Değer Eğitimi [C2]', 'AKTS': 4},
-    {'Ders': 'EBB292 - Karşılaştırmalı Eğitim [C2]', 'AKTS': 4},
-    {'Ders': 'EBB293 - Mikro Öğretim [C2]', 'AKTS': 4},
-    {'Ders': 'EBB294 - Müze Eğitimi [C2]', 'AKTS': 4},
-    {'Ders': 'EBB295 - Okul Dışı Öğrenme Ortamları [C2]', 'AKTS': 4},
-    {'Ders': 'EBB296 - Öğrenme Güçlüğü [C2]', 'AKTS': 4},
-    {'Ders': 'EBB297 - Öğretimi Bireyselleştirme ve Uyarlama [C2]', 'AKTS': 4},
-    {'Ders': 'EBB298 - Sürdürülebilir Kalkınma ve Eğitim [C2]', 'AKTS': 4},
-    {'Ders': 'EBB299 - Yetişkin Eğitimi ve Hayat Boyu Öğrenme [C2]', 'AKTS': 4}
+......
 ]
 
 # Define general culture elective courses
 genelkultur_courses = [
-    {'Ders': 'EFS150 - Bilim Tarihi ve Felsefesi [C2]', 'AKTS': 3},
-    {'Ders': 'EFS151 - Sanat ve Estetik [C2]', 'AKTS': 3},
-    {'Ders': 'EFS152 - Bağımlılık ve Bağımlılıkla Mücadele [C2]', 'AKTS': 3},
-    {'Ders': 'EFS153 - Beslenme ve Sağlık [C2]', 'AKTS': 3},
-    {'Ders': 'EFS154 - Ebru Sanatı [C2]', 'AKTS': 3},
-    {'Ders': 'EFS155 - Bilim ve Araştırma Etiği [C2]', 'AKTS': 3},
-    {'Ders': 'EFS156 - Ekonomi ve Girişimcilik [C2]', 'AKTS': 3},
-    {'Ders': 'EFS157 - Geleneksel Türk El Sanatları [C2]', 'AKTS': 3},
-    {'Ders': 'EFS159 - İnsan İlişkileri ve İletişim [C2]', 'AKTS': 3},
-    {'Ders': 'EFS161 - Kültür ve Dil [C2]', 'AKTS': 3},
-    {'Ders': 'EFS162 - Medya Okuryazarlığı [C2]', 'AKTS': 3},
-    {'Ders': 'EFS163 - Mesleki İngilizce [C2]', 'AKTS': 3},
-    {'Ders': 'EFS164 - Türk Halk Oyunları [C2]', 'AKTS': 3},
-    {'Ders': 'EFS165 - Türk İşaret Dili [C2]', 'AKTS': 3},
-    {'Ders': 'EFS166 - Türk Kültür Coğrafyası [C2]', 'AKTS': 3},
-    {'Ders': 'EFS168 - Türk Sanatı Tarihi [C2]', 'AKTS': 3},
-    {'Ders': 'EFS170 - Spss Uygulamalı Temel İstatistik [C2]', 'AKTS': 3},
-    {'Ders': 'EFS171 - Ergenlerde Cinsel Sağlık Eğitimi [C2]', 'AKTS': 3},
-    {'Ders': 'EFS172 - Tıbbi Bitkiler ve Kullanım Alanları [C2]', 'AKTS': 3},
-    {'Ders': 'EFS173 - Fen Eğitiminde Sosyobilimsel Konular ve Öğretimi [C2]', 'AKTS': 3},
-    {'Ders': 'EFS174 - İnsan Hakları [C2]', 'AKTS': 3},
-    {'Ders': 'EFS175 - Felsefenin Temelleri [C2]', 'AKTS': 3},
-    {'Ders': 'EFS176 - Felsefe ve Edebi Metinler [C2]', 'AKTS': 3},
+.....
 ]
 
 
@@ -269,16 +217,16 @@ def mutate(schedule, mutation_rate=0.2):
             course = schedule[i]
             classroom = random.choice(classrooms)
             time_slot = random.choice(time_slots)
-            # Güvenli erişim için tuple'ın uzunluğunu kontrol edin
+            # check tuple for secure access
             if len(time_slot) >= 3:
                 schedule[i] = {
                     'Ders': course['Ders'],
                     'AKTS': course['AKTS'],
                     'Derslik': classroom['Derslik'],
                     'Kapasite': classroom['Kapasite'],
-                    'Gün': time_slot[0],         # Gün bilgisine erişim
-                    'Başlama Zamanı': time_slot[1],  # Başlama zamanı bilgisine erişim
-                    'Bitiş Zamanı': time_slot[2]   # Bitiş zamanı bilgisine erişim
+                    'Gün': time_slot[0],         # day info access
+                    'Başlama Zamanı': time_slot[1],  # start time  info access
+                    'Bitiş Zamanı': time_slot[2]   # end time info
                 }
           #  else:
           #      print(f"Warning: Invalid time_slot tuple found: {time_slot}")
