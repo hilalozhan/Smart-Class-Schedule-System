@@ -1,1 +1,1 @@
-# Smart-Class-Schedule-System
+# Universty-Schedule-Optimazation-System
