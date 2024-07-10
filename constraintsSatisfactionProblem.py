@@ -2,7 +2,7 @@ import pandas as pd
 from tabulate import tabulate
 
 # Load Excel file
-file_path = 'Class Schedule Management System_Sample Dataset_28062024.xlsx'
+file_path = 'path your dataset'
 classrooms_df = pd.read_excel(file_path, sheet_name='Classrooms')
 fall_semester_df = pd.read_excel(file_path, sheet_name='Fall Semester')
 spring_semester_df = pd.read_excel(file_path, sheet_name='Spring Semester')
