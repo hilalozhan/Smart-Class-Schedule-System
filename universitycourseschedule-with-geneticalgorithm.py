@@ -85,23 +85,6 @@ def is_slot_available(occupied_slots, classroom, day, start_time, end_time, term
     
     return True
 
-# Function to check if a time slot is available
-def is_slot_available(occupied_slots, classroom, day, start_time, end_time, term_slots):
-    start_minutes = time_to_minutes(start_time)
-    end_minutes = time_to_minutes(end_time)
-    
-    # Check classroom availability
-    for (start, end) in occupied_slots[day][classroom]:
-        if not (end_minutes + 30 <= time_to_minutes(start) or start_minutes >= time_to_minutes(end) + 30):
-            return False
-    
-    # Check term (yarıyıl) availability if term_slots is provided
-    if term_slots:
-        for (start, end) in term_slots[day]:
-            if not (end_minutes + 30 <= time_to_minutes(start) or start_minutes >= time_to_minutes(end) + 30):
-                return False
-    
-    return True
 
 # Function to create a random schedule
 def create_random_schedule(classrooms, courses, weekdays, time_slots):
