@@ -1,1 +1,1 @@
-# Universty-Schedule-Optimazation-System
+# University-Schedule-Optimization-System
