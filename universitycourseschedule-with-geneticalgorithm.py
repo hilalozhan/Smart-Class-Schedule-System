@@ -9,6 +9,8 @@ import random
 from tabulate import tabulate
 from datetime import datetime
 
+# Load the Excel file
+file_path = 'path your dataset'
 classrooms_df = pd.read_excel(file_path, sheet_name='Classrooms')
 fall_semester_df = pd.read_excel(file_path, sheet_name='Fall Semester')
 spring_semester_df = pd.read_excel(file_path, sheet_name='Spring Semester')
