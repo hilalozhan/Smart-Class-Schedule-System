@@ -5,56 +5,7 @@ from tabulate import tabulate
 import math
 
 # Load sample data set
-file_path = 'Course Schedule Management System_Sample Data Set_28062024.xlsx'
-classrooms_df = pd.read_excel(file_path, sheet_name='Classrooms')
-fall_semester_df = pd.read_excel(file_path, sheet_name='Fall Semester')
-spring_semester_df = pd.read_excel(file_path, sheet_name='Spring Semester')
-students_df = pd.read_excel(file_path, sheet_name='Students')
-
-# Data preprocessing
-fall_semester_df.columns = fall_semester_df.columns.str.strip()
-spring_semester_df.columns = spring_semester_df.columns.str.strip()
-
-# Prepare the list of classrooms and courses
-classrooms = classrooms_df[['Classroom', 'Capacity']].to_dict(orient='records')
-courses_fall = fall_semester_df[['Course', 'Semester', 'ECTS']].to_dict(orient='records')
-courses_spring = spring_semester_df[['Course', 'Semester', 'ECTS']].to_dict(orient='records')
-students = students_df[['Student', 'Grade']].to_dict(orient='records')
-
-# Define elective courses
-major_elective_courses = [
-    {'Course': 'MÖ470 - Western Music Genre and Form Knowledge [C2]', 'ECTS': 4},
-    {'Course': 'MÖ471 - Drama and Musical Plays [C2]', 'ECTS': 4},
-    {'Course': 'MÖ472 - Educational Music Composition Techniques [C2]', 'ECTS': 4}
-]
-
-professional_elective_courses = [
-    {'Course': 'EBB278 - Open and Distance Learning [C2]', 'ECTS': 4},
-    {'Course': 'EBB279 - Child Psychology [C2]', 'ECTS': 4}
-]
-
-general_culture_courses = [
-    {'Course': 'EFS150 - History and Philosophy of Science [C2]', 'ECTS': 3},
-    {'Course': 'EFS151 - Art and Aesthetics [C2]', 'ECTS': 3}
-]
-# Function to convert time strings to minutes
-def time_to_minutes(time_str):
-    time_parts = time_str.split(':')
-    return int(time_parts[0]) * 60 + int(time_parts[1])
-
-# Define time slots (2-hour intervals with 30-minute breaks from 08:30 to 17:30)
-time_slots = [(f'{hour:02d}:{minute:02d}', f'{hour + 2:02d}:{minute:02d}') for hour, minute in [(8, 30), (11, 0), (13, 30), (16, 0)]]
-
-weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
-
-import pandas as pd
-import numpy as np
-from datetime import datetime
-from tabulate import tabulate
-import math
-
-# Load sample data set
-file_path = 'Course Schedule Management System_Sample Data Set_28062024.xlsx'
+file_path = 'path your dataset'
 classrooms_df = pd.read_excel(file_path, sheet_name='Classrooms')
 fall_semester_df = pd.read_excel(file_path, sheet_name='Fall Semester')
 spring_semester_df = pd.read_excel(file_path, sheet_name='Spring Semester')
@@ -72,19 +23,15 @@ students = students_df[['Student', 'Grade']].to_dict(orient='records')
 
 # Define elective courses
 major_elective_courses = [
-    {'Course': 'MÖ470 - Western Music Genre and Form Knowledge [C2]', 'ECTS': 4},
-    {'Course': 'MÖ471 - Drama and Musical Plays [C2]', 'ECTS': 4},
-    {'Course': 'MÖ472 - Educational Music Composition Techniques [C2]', 'ECTS': 4}
+..
 ]
 
 professional_elective_courses = [
-    {'Course': 'EBB278 - Open and Distance Learning [C2]', 'ECTS': 4},
-    {'Course': 'EBB279 - Child Psychology [C2]', 'ECTS': 4}
+..
 ]
 
 general_culture_courses = [
-    {'Course': 'EFS150 - History and Philosophy of Science [C2]', 'ECTS': 3},
-    {'Course': 'EFS151 - Art and Aesthetics [C2]', 'ECTS': 3}
+ ..   
 ]
 
 # Function to convert time strings to minutes
